@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/bouje/OneDrive/Bureau/TP2
+Ec4
+Z1 w1676898221
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 18
+R0
+Z5 8C:/Users/bouje/OneDrive/Bureau/TP2/C5.vhd
+Z6 FC:/Users/bouje/OneDrive/Bureau/TP2/C5.vhd
+l0
+L5 1
+VRe[?2=UG`jnV0G9YJ:FC63
+!s100 U>S4l@hf56W>izD>DLiR71
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1676898323
+!i10b 1
+Z9 !s108 1676898323.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP2/C5.vhd|
+Z11 !s107 C:/Users/bouje/OneDrive/Bureau/TP2/C5.vhd|
+!i113 1
+Z12 o-work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+Z14 DEx4 work 2 c4 0 22 Re[?2=UG`jnV0G9YJ:FC63
+!i122 18
+l14
+Z15 L11 14
+Z16 V8iV:efD^JZQI:km41>AdA0
+Z17 !s100 JPdb<g@QWA_=DE94FVXk^0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emux
+Z18 w1676893268
+R3
+R4
+!i122 3
+R0
+8C:/Users/bouje/OneDrive/Bureau/TP2/MUX_CASE.vhd
+FC:/Users/bouje/OneDrive/Bureau/TP2/MUX_CASE.vhd
+l0
+L4 1
+VXO>R3fc_BK`0Tf=U:CnlH0
+!s100 Uh8nhI:bbG5z9@AWJPLfm2
+R7
+32
+!s110 1676893275
+!i10b 1
+!s108 1676893275.000000
+!s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP2/MUX_CASE.vhd|
+!s107 C:/Users/bouje/OneDrive/Bureau/TP2/MUX_CASE.vhd|
+!i113 1
+R12
+R13
+Astruct
+R3
+R4
+DEx4 work 3 mux 0 22 XO>R3fc_BK`0Tf=U:CnlH0
+!i122 0
+l11
+L10 16
+VX4=i7G1GUn[gIMQX]5JEO3
+!s100 `HLcXJZkgglc4j;md6m483
+R7
+32
+!s110 1676892096
+!i10b 1
+!s108 1676892096.000000
+!s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP2/TP2_MUX.vhd|
+!s107 C:/Users/bouje/OneDrive/Bureau/TP2/TP2_MUX.vhd|
+!i113 1
+R12
+R13
+FC:/Users/bouje/OneDrive/Bureau/TP2/TP2_MUX.vhd
+8C:/Users/bouje/OneDrive/Bureau/TP2/TP2_MUX.vhd
