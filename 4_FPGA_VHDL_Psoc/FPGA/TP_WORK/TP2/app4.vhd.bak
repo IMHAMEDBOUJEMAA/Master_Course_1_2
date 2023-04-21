@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity counter_transcoder is
+  port (
+    clk      : in  std_logic;
+    reset    : in  std_logic;
+    count    : out std_logic_vector(3 downto 0);
+    segments : out std_logic_vector(6 downto 0)
+  );
+end entity;
+
+architecture rtl of counter_transcoder is
+
+  signal counter : unsigned(3 downto 0) := (others => '0');
+
+  component transcoder is
+    port (
+      value    : in  std_logic_vector(3 downto 0);
+      segments : out std_logic_vector(6 downto 0)
+    );
+  end component;
+
+begin
+
+  -- Instantiate the transcoder
+  trans : transcoder port map(
+    value    => std_logic_vector(counter),
+    segments => segments
+  );
+
+  process (clk, reset)
+  begin
+    if reset = '1' then
+      counter <= (others => '0');
+      count   <= (others => '0');
+    elsif rising_edge(clk) then
+      counter <= counter + 1;
+      count   <= to_stdlogicvector(counter);
+    end if;
+  end process;
+
+end architecture;
+

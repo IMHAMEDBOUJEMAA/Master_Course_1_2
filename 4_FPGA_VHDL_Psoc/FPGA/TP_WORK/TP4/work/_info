@@ -1,0 +1,244 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/bouje/OneDrive/Bureau/TP4
+Ecounter
+Z1 w1678722172
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 19
+R0
+Z5 8C:/Users/bouje/OneDrive/Bureau/TP4/EX5_compteur_décompteur.vhd
+Z6 FC:/Users/bouje/OneDrive/Bureau/TP4/EX5_compteur_décompteur.vhd
+l0
+L5 1
+V:JdBdMD1`BLQRa<d;mQlU2
+!s100 JP<A92WUlI=]8]K15V66I0
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1678722176
+!i10b 1
+Z9 !s108 1678722176.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP4/EX5_compteur_décompteur.vhd|
+!s107 C:/Users/bouje/OneDrive/Bureau/TP4/EX5_compteur_décompteur.vhd|
+!i113 1
+Z11 o-work work
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 7 counter 0 22 :JdBdMD1`BLQRa<d;mQlU2
+!i122 19
+l19
+L17 22
+V4:_dIzS`U6:5okWOdd50B0
+!s100 JS0ljAYemYiYYZUcKo_l[3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+Z13 !s107 C:/Users/bouje/OneDrive/Bureau/TP4/EX5_compteur_décompteur.vhd|
+!i113 1
+R11
+R12
+Edecoder_2vers4
+Z14 w1678715845
+R3
+R4
+!i122 3
+R0
+Z15 8C:/Users/bouje/OneDrive/Bureau/TP4/EX2_decodeur_2_4.vhd
+Z16 FC:/Users/bouje/OneDrive/Bureau/TP4/EX2_decodeur_2_4.vhd
+l0
+L4 1
+V4n;d0_W:[MdZ3?]9nDmlC1
+!s100 a]?k;G?7^]TihilhkO@i[2
+R7
+32
+Z17 !s110 1678715974
+!i10b 1
+Z18 !s108 1678715974.000000
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP4/EX2_decodeur_2_4.vhd|
+Z20 !s107 C:/Users/bouje/OneDrive/Bureau/TP4/EX2_decodeur_2_4.vhd|
+!i113 1
+R11
+R12
+Artl
+R3
+R4
+DEx4 work 14 decoder_2vers4 0 22 4n;d0_W:[MdZ3?]9nDmlC1
+!i122 3
+l12
+L11 7
+V`;T4R0hcici[]Al[V7SX02
+!s100 3gh0zDIb_HR6`T^mfCnA<0
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R11
+R12
+Edecoder_dcbto7seg
+Z21 w1678717167
+R2
+R3
+R4
+!i122 10
+R0
+Z22 8C:/Users/bouje/OneDrive/Bureau/TP4/EX3_decodeur_dcb_vers_7.vhd
+Z23 FC:/Users/bouje/OneDrive/Bureau/TP4/EX3_decodeur_dcb_vers_7.vhd
+l0
+L5 1
+V2`[IgaMzY;>:;ajkBc0_@3
+!s100 0gfEF0zDFHgH<iZA@B@kS3
+R7
+32
+Z24 !s110 1678717172
+!i10b 1
+Z25 !s108 1678717172.000000
+Z26 !s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP4/EX3_decodeur_dcb_vers_7.vhd|
+Z27 !s107 C:/Users/bouje/OneDrive/Bureau/TP4/EX3_decodeur_dcb_vers_7.vhd|
+!i113 1
+R11
+R12
+Artl
+R2
+R3
+R4
+DEx4 work 17 decoder_dcbto7seg 0 22 2`[IgaMzY;>:;ajkBc0_@3
+!i122 10
+l11
+Z28 L10 26
+Vel?2RhL>=;1e5FVkNHJ_n3
+!s100 @Wf8_zIkEaz;Fa^JBZ<ez1
+R7
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R11
+R12
+Eex1
+Z29 w1678715294
+R3
+R4
+!i122 0
+R0
+Z30 8C:/Users/bouje/OneDrive/Bureau/TP4/EX1_fonction_logique_simple.vhd
+Z31 FC:/Users/bouje/OneDrive/Bureau/TP4/EX1_fonction_logique_simple.vhd
+l0
+L5 1
+VO;h:D08Dn^QSCYH?]UkjI0
+!s100 5<>_CUiVJLBN2GcAKDlzW2
+R7
+32
+Z32 !s110 1678715318
+!i10b 1
+Z33 !s108 1678715316.000000
+Z34 !s90 -reportprogress|300|-work|work|C:/Users/bouje/OneDrive/Bureau/TP4/EX1_fonction_logique_simple.vhd|
+Z35 !s107 C:/Users/bouje/OneDrive/Bureau/TP4/EX1_fonction_logique_simple.vhd|
+!i113 1
+R11
+R12
+Artl
+R3
+R4
+DEx4 work 3 ex1 0 22 O;h:D08Dn^QSCYH?]UkjI0
+!i122 0
+l14
+L13 4
+VTI3XgP_WCV4Le[S2Thm@G1
+!s100 c;`Pm:fAnGfnCN3S8bjS^0
+R7
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 1
+R11
+R12
+Eex3_bcd
+Z36 w1678717830
+R2
+R3
+R4
+!i122 13
+R0
+R22
+R23
+l0
+L5 1
+Vm1_4DMa:QV_Yf7o]kE41`3
+!s100 j=a@^l4ViSfa93^_GbE]10
+R7
+32
+Z37 !s110 1678717835
+!i10b 1
+Z38 !s108 1678717835.000000
+R26
+R27
+!i113 1
+R11
+R12
+Artl
+R2
+R3
+R4
+DEx4 work 7 ex3_bcd 0 22 m1_4DMa:QV_Yf7o]kE41`3
+!i122 13
+l11
+R28
+V:TbN7Il@gjU:ikc7b7QLk2
+!s100 @c9Z8:GSab1>`L```@d3O1
+R7
+32
+R37
+!i10b 1
+R38
+R26
+R27
+!i113 1
+R11
+R12
+Eex3_dcb
+w1678716173
+R3
+R4
+!i122 4
+R0
+R22
+R23
+l0
+L4 1
+V1G8TX@NeAo9B1fgb>LP:<3
+!s100 c<=WAH<TcA_QKUgc=iJfS0
+R7
+32
+!s110 1678716179
+!i10b 1
+!s108 1678716179.000000
+R26
+R27
+!i113 1
+R11
+R12
