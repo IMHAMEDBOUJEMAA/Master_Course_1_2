@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Price Estimator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="application.js"></script>
+	<link rel="stylesheet" href="application.css">
+  </head>
+  <body>
+    <div id="container">
+        <h1>Real Home Price Estimator In Tunisia</h1>
+        <div id="form-container">
+          <form>
+            <div>
+              <label for="uigovernorate">Governorate</label>
+              <select class="governorate" name="governorate" id="uigovernorate">
+                <option value="" disabled="disabled" selected="selected">Choose a governorate</option>
+              </select>
+            </div>
+    
+            <div>
+              <label for="uiarea">Area (m²)</label>
+              <input type="number" name="area" id="uiarea" />
+            </div>
+    
+            <div>
+              <label for="uiroom">Number of Rooms</label>
+              <select name="room" id="uiroom">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+    
+            <div>
+              <label for="uibathroom">Number of Bathrooms</label>
+              <select name="bathroom" id="uibathroom">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+        <div class="checkboxes">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" name="garage" id="uigarage" value="1">
+                <label class="checkbox-label" for="uigarage">Garage</label>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="garden" id="uigarden" value="1">
+                <label class="checkbox-label" for="uigarden">Garden</label>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="pool" id="uipool" value="1">
+                <label class="checkbox-label" for="uipool">Pool</label>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="furnished" id="uifurnished" value="1">
+                <label class="checkbox-label" for="uifurnished">Furnished</label>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="equipped_kitchen" id="uiequipped_kitchen" value="1">
+                <label class="checkbox-label" for="uiequipped_kitchen">Equipped kitchen</label>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="central_healting" id="uicentral_healting" value="1">
+                <label class="checkbox-label" for="uicentral_healting">Central heating</label>
+              </div>
+              
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="air_conditioning" id="uiair_conditioning" value="1">
+                <label class="checkbox-label" for="uiair_conditioning">Air conditioning</label>
+              </div>
+            </div>    
+              
+            
+
+      <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+      <div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
+    </body>
+    </html>
