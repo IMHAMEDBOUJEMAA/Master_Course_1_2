@@ -1,0 +1,1592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<!-- saved from url=(0062)https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>regular API reference</title>
+<link rel="stylesheet" type="text/css" href="./regular API reference_files/style.css">
+</head>
+
+<body>
+
+<div align="center">
+<table class="allEncompassingTable">
+ <tbody><tr>
+  <td>
+<p><a href="https://www.coppeliarobotics.com/helpFiles/index.html" target="_top"><img src="./regular API reference_files/homeImg.png"></a></p>
+
+
+
+<h1>Regular API reference</h1>
+
+
+<p class="warningBox">The list of API functions below allows you to access many CoppeliaSim parameters<a href="https://www.coppeliarobotics.com/helpFiles/en/settings.htm"></a>. There are however too many parameters in CoppeliaSim to have a specific API function for each one of them. <em>Auxiliary</em> parameters can be accessed via a set of given functions that use <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm">object parameter IDs</a>. Refer also to  the <a href="https://www.coppeliarobotics.com/helpFiles/en/apiConstants.htm#booleanParameters">global parameter IDs</a>.<br>
+All units going to, or coming from the API are in meters, kilograms, seconds and <strong>radians</strong> or a combination of those (unless otherwise explicitly indicated).
+</p>
+
+
+
+<h2><a name="fileOperations"></a>File operations</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCloseScene.htm">sim.closeScene</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveScene.htm">sim.saveScene</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadScene.htm">sim.loadScene</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveModel.htm">sim.saveModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadModel.htm">sim.loadModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportShape.htm">sim.importShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportMesh.htm">sim.importMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExportMesh.htm">sim.exportMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLaunchExecutable.htm">sim.launchExecutable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">sim.createTexture</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCloseScene.htm">simCloseScene</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveScene.htm">simSaveScene</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadScene.htm">simLoadScene</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveModel.htm">simSaveModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadModel.htm">simLoadModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDoesFileExist.htm">simDoesFileExist</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportShape.htm">simImportShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportMesh.htm">simImportMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExportMesh.htm">simExportMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">simCreateTexture</a>
+</code>
+<br>
+
+
+
+<h2><a name="HandleRetrieval"></a>General object handle retrieval</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObject.htm">sim.getObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectFromUid.htm">sim.getObjectFromUid</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsHandle.htm">sim.isHandle</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjects.htm">sim.getObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectsInTree.htm">sim.getObjectsInTree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetCollectionObjects.htm">sim.getCollectionObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetReferencedHandles.htm">sim.setReferencedHandles</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetReferencedHandles.htm">sim.getReferencedHandles</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObject.htm">simGetObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectFromUid.htm">simGetObjectFromUid</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsHandle.htm">simIsHandle</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjects.htm">simGetObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectsInTree.htm">simGetObjectsInTree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetCollectionObjects.htm">simGetCollectionObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetReferencedHandles.htm">simSetReferencedHandles</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetReferencedHandles.htm">simGetReferencedHandles</a>
+</code>
+<br>
+
+
+
+<h2><a name="mainFunctionalityHandling"></a>General functionality handling</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleChildScripts.htm">sim.handleChildScripts</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleEmbeddedScripts.htm">sim.handleEmbeddedScripts</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleAddOnScripts.htm">sim.handleAddOnScripts</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleSandboxScript.htm">sim.handleSandboxScript</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleMainScript.htm">simHandleMainScript</a>
+</code>
+<br>
+
+
+
+<h2><a name="collisionDetection"></a>Collision detection</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckCollision.htm">sim.checkCollision</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckCollisionEx.htm">sim.checkCollisionEx</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckCollision.htm">simCheckCollision</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckCollisionEx.htm">simCheckCollisionEx</a>
+</code>
+<br>
+
+
+
+<h2><a name="distanceCalculation"></a>Minimum distance calculation</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckDistance.htm">sim.checkDistance</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckDistance.htm">simCheckDistance</a>
+</code>
+<br>
+
+
+
+<h2><a name="dynamicsFunctionality"></a>Dynamics</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleDynamics.htm">sim.handleDynamics</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetPosition.htm">sim.setJointTargetPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetVelocity.htm">sim.setJointTargetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadForceSensor.htm">sim.readForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointForce.htm">sim.getJointForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetForce.htm">sim.getJointTargetForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetForce.htm">sim.setJointTargetForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForce.htm">sim.addForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForceAndTorque.htm">sim.addForceAndTorque</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVelocity.htm">sim.getVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLinkDummy.htm">sim.getLinkDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLinkDummy.htm">sim.setLinkDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetDynamicObject.htm">sim.resetDynamicObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObject.htm">sim.addParticleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObjectItem.htm">sim.addParticleObjectItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveParticleObject.htm">sim.removeParticleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetContactInfo.htm">sim.getContactInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeMass.htm">sim.getShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMass.htm">sim.setShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeInertia.htm">sim.getShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeInertia.htm">sim.setShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simComputeMassAndInertia.htm">sim.computeMassAndInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateForceSensor.htm">sim.createForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simConvexDecompose.htm">sim.convexDecompose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetQHull.htm">sim.getQHull</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDecimatedMesh.htm">sim.getDecimatedMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDynamicallyEnabled.htm">sim.isDynamicallyEnabled</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMaterial.htm">sim.setShapeMaterial</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#engineParameters">physics engine parameter functions</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleDynamics.htm">simHandleDynamics</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetPosition.htm">simSetJointTargetPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetVelocity.htm">simSetJointTargetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadForceSensor.htm">simReadForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointForce.htm">simGetJointForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetForce.htm">simGetJointTargetForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetForce.htm">simSetJointTargetForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForce.htm">simAddForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForceAndTorque.htm">simAddForceAndTorque</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVelocity.htm">simGetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLinkDummy.htm">simGetLinkDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLinkDummy.htm">simSetLinkDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetDynamicObject.htm">simResetDynamicObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObject.htm">simAddParticleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObjectItem.htm">simAddParticleObjectItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveParticleObject.htm">simRemoveParticleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetContactInfo.htm">simGetContactInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeMass.htm">simGetShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMass.htm">simSetShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeInertia.htm">simGetShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeInertia.htm">simSetShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simComputeMassAndInertia.htm">simComputeMassAndInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateForceSensor.htm">simCreateForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simConvexDecompose.htm">simConvexDecompose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetQHull.htm">simGetQHull</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDecimatedMesh.htm">simGetDecimatedMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDynamicallyEnabled.htm">simIsDynamicallyEnabled</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMaterial.htm">simSetShapeMaterial</a>
+</code>
+<br>
+
+
+
+<h2><a name="proximitySensor"></a>Proximity sensors</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleProximitySensor.htm">sim.handleProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadProximitySensor.htm">sim.readProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetProximitySensor.htm">sim.resetProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckProximitySensor.htm">sim.checkProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckProximitySensorEx.htm">sim.checkProximitySensorEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckProximitySensorEx2.htm">sim.checkProximitySensorEx2</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateProximitySensor.htm">sim.createProximitySensor</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#proximitySensors">parameters related to proximity sensors</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleProximitySensor.htm">simHandleProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadProximitySensor.htm">simReadProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetProximitySensor.htm">simResetProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckProximitySensor.htm">simCheckProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckProximitySensorEx.htm">simCheckProximitySensorEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckProximitySensorEx2.htm">simCheckProximitySensorEx2</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateProximitySensor.htm">simCreateProximitySensor</a>
+</code>
+<br>
+
+
+
+<h2><a name="visionSensor"></a>Vision sensors</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleVisionSensor.htm">sim.handleVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadVisionSensor.htm">sim.readVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetVisionSensor.htm">sim.resetVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckVisionSensor.htm">sim.checkVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckVisionSensorEx.htm">sim.checkVisionSensorEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVisionSensorDepth.htm">sim.getVisionSensorDepth</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVisionSensorImg.htm">sim.getVisionSensorImg</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetVisionSensorImg.htm">sim.setVisionSensorImg</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustView.htm">sim.adjustView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateVisionSensor.htm">sim.createVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">sim.getExtensionString</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#visionSensors">parameters related to vision sensors</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleVisionSensor.htm">simHandleVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadVisionSensor.htm">simReadVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetVisionSensor.htm">simResetVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckVisionSensor.htm">simCheckVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckVisionSensorEx.htm">simCheckVisionSensorEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVisionSensorDepth.htm">simGetVisionSensorDepth</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVisionSensorImg.htm">simGetVisionSensorImg</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetVisionSensorImg.htm">simSetVisionSensorImg</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustView.htm">simAdjustView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateVisionSensor.htm">simCreateVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">simGetExtensionString</a>
+</code>
+<br>
+
+
+
+<h2><a name="forceSensor"></a>Force sensors</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadForceSensor.htm">sim.readForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateForceSensor.htm">sim.createForceSensor</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#forceSensors">parameters related to force sensors</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadForceSensor.htm">simReadForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateForceSensor.htm">simCreateForceSensor</a>
+</code>
+<br>
+
+
+
+<h2><a name="jointObject"></a>Joints</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointPosition.htm">sim.setJointPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointPosition.htm">sim.getJointPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetPosition.htm">sim.setJointTargetPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetPosition.htm">sim.getJointTargetPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetVelocity.htm">sim.setJointTargetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetVelocity.htm">sim.getJointTargetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointVelocity.htm">sim.getJointVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectChildPose.htm">sim.getObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectChildPose.htm">sim.setObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointInterval.htm">sim.setJointInterval</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointInterval.htm">sim.getJointInterval</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointType.htm">sim.getJointType</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateJoint.htm">sim.createJoint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointMode.htm">sim.setJointMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointMode.htm">sim.getJointMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointDependency.htm">sim.setJointDependency</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointDependency.htm">sim.getJointDependency</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointForce.htm">sim.getJointForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetForce.htm">sim.getJointTargetForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetForce.htm">sim.setJointTargetForce</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#joints">parameters related to joints</a>.
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#engineParameters">physics engine parameter functions</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointPosition.htm">simSetJointPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointPosition.htm">simGetJointPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetPosition.htm">simSetJointTargetPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetPosition.htm">simGetJointTargetPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointTargetVelocity.htm">simSetJointTargetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetVelocity.htm">simGetJointTargetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointVelocity.htm">simGetJointVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectChildPose.htm">simGetObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectChildPose.htm">simSetObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointInterval.htm">simSetJointInterval</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointInterval.htm">simGetJointInterval</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointType.htm">simGetJointType</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateJoint.htm">simCreateJoint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointMode.htm">simSetJointMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointMode.htm">simGetJointMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetJointDependency.htm">simSetJointDependency</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointDependency.htm">simGetJointDependency</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointForce.htm">simGetJointForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetJointTargetForce.htm">simGetJointTargetForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simsetJointTargetForce.htm">simSetJointTargetForce</a>
+</code>
+<br>
+
+
+
+<h2><a name="shapeObject"></a>Shapes</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForce.htm">sim.addForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForceAndTorque.htm">sim.addForceAndTorque</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVelocity.htm">sim.getVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeColor.htm">sim.getShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeColor.htm">sim.setShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeTextureId.htm">sim.getShapeTextureId</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeTexture.htm">sim.setShapeTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateMeshShape.htm">sim.createMeshShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePrimitiveShape.htm">sim.createPrimitiveShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateHeightfieldShape.htm">sim.createHeightfieldShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeMesh.htm">sim.getShapeMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeViz.htm">sim.getShapeViz</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeGeomInfo.htm">sim.getShapeGeomInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeMass.htm">sim.getShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMass.htm">sim.setShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeInertia.htm">sim.getShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeInertia.htm">sim.setShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simComputeMassAndInertia.htm">sim.computeMassAndInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGroupShapes.htm">sim.groupShapes</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUngroupShape.htm">sim.ungroupShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportShape.htm">sim.importShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simConvexDecompose.htm">sim.convexDecompose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetQHull.htm">sim.getQHull</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDecimatedMesh.htm">sim.getDecimatedMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReorientShapeBoundingBox.htm">sim.reorientShapeBoundingBox</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMaterial.htm">sim.setShapeMaterial</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeBB.htm">sim.getShapeBB</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeBB.htm">sim.setShapeBB</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">sim.getExtensionString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateTextShape.htm">sim.generateTextShape</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#shapes">parameters related to shapes</a>.
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#engineParameters">physics engine parameter functions</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForce.htm">simAddForce</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddForceAndTorque.htm">simAddForceAndTorque</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetVelocity.htm">simGetVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeColor.htm">simGetShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeColor.htm">simSetShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeTextureId.htm">simGetShapeTextureId</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeTexture.htm">simSetShapeTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateMeshShape.htm">simCreateMeshShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePrimitiveShape.htm">simCreatePrimitiveShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateHeightfieldShape.htm">simCreateHeightfieldShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeMesh.htm">simGetShapeMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeViz.htm">simGetShapeViz</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simApplyTexture.htm">simApplyTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeGeomInfo.htm">simGetShapeGeomInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeMass.htm">simGetShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMass.htm">simSetShapeMass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeInertia.htm">simGetShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeInertia.htm">simSetShapeInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simComputeMassAndInertia.htm">simComputeMassAndInertia</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGroupShapes.htm">simGroupShapes</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUngroupShape.htm">simUngroupShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportShape.htm">simImportShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simConvexDecompose.htm">simConvexDecompose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetQHull.htm">simGetQHull</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDecimatedMesh.htm">simGetDecimatedMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReorientShapeBoundingBox.htm">simReorientShapeBoundingBox</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeMaterial.htm">simSetShapeMaterial</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">simGetExtensionString</a>
+</code>
+<br>
+
+
+
+<h2><a name="graphs"></a>Graphs</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddGraphStream.htm">sim.addGraphStream</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetGraphStreamTransformation.htm">sim.setGraphStreamTransformation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetGraphStreamValue.htm">sim.setGraphStreamValue</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddGraphCurve.htm">sim.addGraphCurve</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDestroyGraphCurve.htm">sim.destroyGraphCurve</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDuplicateGraphCurveToStatic.htm">sim.duplicateGraphCurveToStatic</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleGraph.htm">sim.handleGraph</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetGraph.htm">sim.resetGraph</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#graphs">parameters related to graphs</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddGraphStream.htm">simAddGraphStream</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetGraphStreamTransformation.htm">simSetGraphStreamTransformation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetGraphStreamValue.htm">simSetGraphStreamValue</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddGraphCurve.htm">simAddGraphCurve</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDestroyGraphCurve.htm">simDestroyGraphCurve</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDuplicateGraphCurveToStatic.htm">simDuplicateGraphCurveToStatic</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleGraph.htm">simHandleGraph</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetGraph.htm">simResetGraph</a>
+</code>
+<br>
+
+
+
+<h2><a name="lightObject"></a>Lights</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLightParameters.htm">sim.getLightParameters</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLightParameters.htm">sim.setLightParameters</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">sim.getExtensionString</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#lights">parameters related to lights</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLightParameters.htm">simGetLightParameters</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLightParameters.htm">simSetLightParameters</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">simGetExtensionString</a>
+</code>
+<br>
+
+
+
+<h2><a name="cameraObject"></a>Cameras</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCameraFitToView.htm">sim.cameraFitToView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustView.htm">sim.adjustView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">sim.getExtensionString</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#cameras">parameters related to cameras</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCameraFitToView.htm">simCameraFitToView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustView.htm">simAdjustView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">simGetExtensionString</a>
+</code>
+<br>
+
+
+
+<h2><a name="dummyObject"></a>Dummies</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateDummy.htm">sim.createDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLinkDummy.htm">sim.getLinkDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLinkDummy.htm">sim.setLinkDummy</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#dummies">parameters related to dummies</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateDummy.htm">simCreateDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLinkDummy.htm">simGetLinkDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLinkDummy.htm">simSetLinkDummy</a>
+</code>
+<br>
+
+
+
+<h2><a name="octree"></a>OC trees</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateOctree.htm">sim.createOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertVoxelsIntoOctree.htm">sim.insertVoxelsIntoOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveVoxelsFromOctree.htm">sim.removeVoxelsFromOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertObjectIntoOctree.htm">sim.insertObjectIntoOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSubtractObjectFromOctree.htm">sim.subtractObjectFromOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetOctreeVoxels.htm">sim.getOctreeVoxels</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckOctreePointOccupancy.htm">sim.checkOctreePointOccupancy</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#octrees">parameters related to OC trees</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateOctree.htm">simCreateOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertVoxelsIntoOctree.htm">simInsertVoxelsIntoOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveVoxelsFromOctree.htm">simRemoveVoxelsFromOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertObjectIntoOctree.htm">simInsertObjectIntoOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSubtractObjectFromOctree.htm">simSubtractObjectFromOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetOctreeVoxels.htm">simGetOctreeVoxels</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCheckOctreePointOccupancy.htm">simCheckOctreePointOccupancy</a>
+</code>
+<br>
+
+
+
+<h2><a name="pointCloud"></a>Point clouds</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePointCloud.htm">sim.createPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPointCloudOptions.htm">sim.getPointCloudOptions</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetPointCloudOptions.htm">sim.setPointCloudOptions</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertPointsIntoPointCloud.htm">sim.insertPointsIntoPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemovePointsFromPointCloud.htm">sim.removePointsFromPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSubtractObjectFromPointCloud.htm">sim.subtractObjectFromPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIntersectPointsWithPointCloud.htm">sim.intersectPointsWithPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertObjectIntoPointCloud.htm">sim.insertObjectIntoPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPointCloudPoints.htm">sim.getPointCloudPoints</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#pointClouds">parameters related to point clouds</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePointCloud.htm">simCreatePointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPointCloudOptions.htm">simGetPointCloudOptions</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetPointCloudOptions.htm">simSetPointCloudOptions</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertPointsIntoPointCloud.htm">simInsertPointsIntoPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemovePointsFromPointCloud.htm">simRemovePointsFromPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSubtractObjectFromPointCloud.htm">simSubtractObjectFromPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIntersectPointsWithPointCloud.htm">simIntersectPointsWithPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertObjectIntoPointCloud.htm">simInsertObjectIntoPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPointCloudPoints.htm">simGetPointCloudPoints</a>
+</code>
+<br>
+
+
+
+<h2><a name="paths"></a>Paths</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePath.htm">sim.createPath</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetConfigDistance.htm">sim.getConfigDistance</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPathLengths.htm">sim.getPathLengths</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPathInterpolatedConfig.htm">sim.getPathInterpolatedConfig</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResamplePath.htm">sim.resamplePath</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateTimeOptimalTrajectory.htm">sim.generateTimeOptimalTrajectory</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateShapeFromPath.htm">sim.generateShapeFromPath</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetClosestPosOnPath.htm">sim.getClosestPosOnPath</a></code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateShapeFromPath.htm">simGenerateShapeFromPath</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetClosestPosOnPath.htm">simGetClosestPosOnPath</a>
+</code>
+<br>
+
+
+
+<h2><a name="sceneObjectFunctionality"></a>Scene objects</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObject.htm">sim.getObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectUid.htm">sim.getObjectUid</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsHandle.htm">sim.isHandle</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveObject.htm">sim.removeObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveModel.htm">sim.removeModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectAlias.htm">sim.getObjectAlias</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectAlias.htm">sim.setObjectAlias</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjects.htm">sim.getObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectsInTree.htm">sim.getObjectsInTree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectParent.htm">sim.getObjectParent</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectParent.htm">sim.setObjectParent</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectChild.htm">sim.getObjectChild</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectMatrix.htm">sim.getObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectMatrix.htm">sim.setObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPose.htm">sim.getObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPose.htm">sim.setObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPosition.htm">sim.getObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPosition.htm">sim.setObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectOrientation.htm">sim.getObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectOrientation.htm">sim.setObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectQuaternion.htm">sim.getObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectQuaternion.htm">sim.setObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectType.htm">sim.getObjectType</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSelection.htm">sim.getObjectSelection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectSelection.htm">sim.setObjectSelection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSizeFactor.htm">sim.getObjectSizeFactor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCopyPasteObjects.htm">sim.copyPasteObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObject.htm">sim.scaleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObjects.htm">sim.scaleObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectProperty.htm">sim.getObjectProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectProperty.htm">sim.setObjectProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSpecialProperty.htm">sim.getObjectSpecialProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectSpecialProperty.htm">sim.setObjectSpecialProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectVelocity.htm">sim.getObjectVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomTableData.htm">sim.readCustomTableData</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteCustomTableData.htm">sim.writeCustomTableData</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlock.htm">sim.readCustomDataBlock</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlockTags.htm">sim.readCustomDataBlockTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteCustomDataBlock.htm">sim.writeCustomDataBlock</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetReferencedHandles.htm">sim.setReferencedHandles</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetReferencedHandles.htm">sim.getReferencedHandles</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDynamicallyEnabled.htm">sim.isDynamicallyEnabled</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectColor.htm">sim.getObjectColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectColor.htm">sim.setObjectColor</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#objectParameters">object parameter functions</a> and <a href="https://www.coppeliarobotics.com/helpFiles/en/objectParameterIDs.htm#sceneObjects">parameters related to scene objects</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObject.htm">simGetObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectUid.htm">simGetObjectUid</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsHandle.htm">simIsHandle</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveObject.htm">simRemoveObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveModel.htm">simRemoveModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectAlias.htm">simGetObjectAlias</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectAlias.htm">simSetObjectAlias</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjects.htm">simGetObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectsInTree.htm">simGetObjectsInTree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectParent.htm">simGetObjectParent</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectParent.htm">simSetObjectParent</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectChild.htm">simGetObjectChild</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectMatrix.htm">simGetObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectMatrix.htm">simSetObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPose.htm">simGetObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPose.htm">simSetObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPosition.htm">simGetObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPosition.htm">simSetObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectOrientation.htm">simGetObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectOrientation.htm">simSetObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectQuaternion.htm">simGetObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectQuaternion.htm">simSetObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectType.htm">simGetObjectType</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSelection.htm">simGetObjectSel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectSelection.htm">simSetObjectSel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSizeFactor.htm">simGetObjectSizeFactor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCopyPasteObjects.htm">simCopyPasteObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObject.htm">simScaleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObjects.htm">simScaleObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectProperty.htm">simGetObjectProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectProperty.htm">simSetObjectProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSpecialProperty.htm">simGetObjectSpecialProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectSpecialProperty.htm">simSetObjectSpecialProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectVelocity.htm">simGetObjectVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlock.htm">simReadCustomDataBlock</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlockTags.htm">simReadCustomDataBlockTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteCustomDataBlock.htm">simWriteCustomDataBlock</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetReferencedHandles.htm">simSetReferencedHandles</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetReferencedHandles.htm">simGetReferencedHandles</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDynamicallyEnabled.htm">simIsDynamicallyEnabled</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectColor.htm">simGetObjectColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectColor.htm">simSetObjectColor</a>
+</code>
+<br>
+
+
+
+<h2><a name="size"></a><a name="scaling"></a>Object size / scaling</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSizeFactor.htm">sim.getObjectSizeFactor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObject.htm">sim.scaleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObjects.htm">sim.scaleObjects</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeBB.htm">sim.getShapeBB</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeBB.htm">sim.setShapeBB</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSizeFactor.htm">simGetObjectSizeFactor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObject.htm">simScaleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simScaleObjects.htm">simScaleObjects</a>
+</code>
+<br>
+
+
+
+<h2><a name="collections"></a>Collections</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateCollection.htm">sim.createCollection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDestroyCollection.htm">sim.destroyCollection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddItemToCollection.htm">sim.addItemToCollection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetCollectionObjects.htm">sim.getCollectionObjects</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateCollection.htm">simCreateCollectionEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDestroyCollection.htm">simDestroyCollection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddItemToCollection.htm">simAddItemToCollection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetCollectionObjects.htm">simGetCollectionObjects</a>
+</code>
+<br>
+
+
+
+<h2><a name="serialCommunicationFunctionality"></a><a name="serialPort"></a>Serial port</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialCheck.htm">sim.serialCheck</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialClose.htm">sim.serialClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialOpen.htm">sim.serialOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialRead.htm">sim.serialRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialSend.htm">sim.serialSend</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialCheck.htm">simSerialCheck</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialClose.htm">simSerialClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialOpen.htm">simSerialOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialRead.htm">simSerialRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialSend.htm">simSerialSend</a>
+</code>
+<br>
+
+
+
+<h2><a name="drawingObject"></a><a name="rendering"></a>Rendering</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddDrawingObject.htm">sim.addDrawingObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddDrawingObjectItem.htm">sim.addDrawingObjectItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveDrawingObject.htm">sim.removeDrawingObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeColor.htm">sim.getShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeColor.htm">sim.setShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectColor.htm">sim.getObjectColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectColor.htm">sim.setObjectColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simChangeEntityColor.htm">sim.changeEntityColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRestoreEntityColor.htm">sim.restoreEntityColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetGenesisEvents.htm">sim.getGenesisEvents</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddDrawingObject.htm">simAddDrawingObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddDrawingObjectItem.htm">simAddDrawingObjectItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveDrawingObject.htm">simRemoveDrawingObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeColor.htm">simGetShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeColor.htm">simSetShapeColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectColor.htm">simGetObjectColor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectColor.htm">simSetObjectColor</a>
+</code>
+<br>
+
+
+
+<h2><a name="particleObject"></a>Particle objects</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObject.htm">sim.addParticleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObjectItem.htm">sim.addParticleObjectItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveParticleObject.htm">sim.removeParticleObject</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObject.htm">simAddParticleObject</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddParticleObjectItem.htm">simAddParticleObjectItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveParticleObject.htm">simRemoveParticleObject</a>
+</code>
+<br>
+
+
+
+<h2><a name="modelFunctionality"></a>Models</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetModelProperty.htm">sim.getModelProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetModelProperty.htm">sim.setModelProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveModel.htm">sim.saveModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadModel.htm">sim.loadModel</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetModelProperty.htm">simGetModelProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetModelProperty.htm">simSetModelProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveModel.htm">simSaveModel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadModel.htm">simLoadModel</a>
+</code>
+<br>
+
+
+
+<h2><a name="sceneObjectSelectionFunctionality"></a>Object selection</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSelection.htm">sim.getObjectSelection</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectSelection.htm">sim.setObjectSelection</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectSelection.htm">simGetObjectSel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectSelection.htm">simSetObjectSel</a>
+</code>
+<br>
+
+
+
+<h2><a name="sceneObjectCreationFunctionality"></a>Object creation</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateDummy.htm">sim.createDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateForceSensor.htm">sim.createForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateHeightfieldShape.htm">sim.createHeightfieldShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateJoint.htm">sim.createJoint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateMeshShape.htm">sim.createMeshShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateProximitySensor.htm">sim.createProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePrimitiveShape.htm">sim.createPrimitiveShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateVisionSensor.htm">sim.createVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateOctree.htm">sim.createOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePointCloud.htm">sim.createPointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">sim.createTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateTextShape.htm">sim.generateTextShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateShapeFromPath.htm">sim.generateShapeFromPath</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateDummy.htm">simCreateDummy</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateForceSensor.htm">simCreateForceSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateHeightfieldShape.htm">simCreateHeightfieldShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateJoint.htm">simCreateJoint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateMeshShape.htm">simCreateMeshShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateProximitySensor.htm">simCreateProximitySensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePrimitiveShape.htm">simCreatePrimitiveShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateVisionSensor.htm">simCreateVisionSensor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateOctree.htm">simCreateOctree</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreatePointCloud.htm">simCreatePointCloud</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">simCreateTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateShapeFromPath.htm">simGenerateShapeFromPath</a>
+</code>
+<br>
+
+
+
+<h2>Scripts</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetRandom.htm">sim.getRandom</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScript.htm">sim.getScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsHandle.htm">sim.isHandle</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddScript.htm">sim.addScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInitScript.htm">sim.initScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveScript.htm">sim.removeScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCallScriptFunction.htm">sim.callScriptFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExecuteScriptString.htm">sim.executeScriptString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetApiFunc.htm">sim.getApiFunc</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetApiInfo.htm">sim.getApiInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleChildScripts.htm">sim.handleChildScripts</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleEmbeddedScripts.htm">sim.handleEmbeddedScripts</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleAddOnScripts.htm">sim.handleAddOnScripts</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleSandboxScript.htm">sim.handleSandboxScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetScriptText.htm">sim.setScriptText</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptFunction.htm">sim.registerScriptFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptVariable.htm">sim.registerScriptVariable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptFuncHook.htm">sim.registerScriptFuncHook</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackTraceback.htm">sim.getStackTraceback</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDeprecated.htm">sim.isDeprecated</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#scriptParameters">functions related to script parameters</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptHandleEx.htm">simGetScriptHandleEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsHandle.htm">simIsHandle</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddScript.htm">simAddScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInitScript.htm">simInitScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRemoveScript.htm">simRemoveScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCallScriptFunction.htm">simCallScriptFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCallScriptFunctionEx.htm">simCallScriptFunctionEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExecuteScriptString.htm">simExecuteScriptString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetApiFunc.htm">simGetApiFunc</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetApiInfo.htm">simGetApiInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleMainScript.htm">simHandleMainScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simResetScript.htm">simResetScript</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptProperty.htm">simGetScriptProperty</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptText.htm">simGetScriptText</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetScriptText.htm">simSetScriptText</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptCallbackFunction.htm">simRegisterScriptCallbackFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptVariable.htm">simRegisterScriptVariable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptFuncHook.htm">simRegisterScriptFuncHook</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDeprecated.htm">simIsDeprecated</a>
+</code>
+<br>
+
+
+
+<h2><a name="SimulationFunctionality"></a>Simulation</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simStartSimulation.htm">sim.startSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPauseSimulation.htm">sim.pauseSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simStopSimulation.htm">sim.stopSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationState.htm">sim.getSimulationState</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationTime.htm">sim.getSimulationTime</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationTimeStep.htm">sim.getSimulationTimeStep</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetRealTimeSimulation.htm">sim.getRealTimeSimulation</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simStartSimulation.htm">simStartSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPauseSimulation.htm">simPauseSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simStopSimulation.htm">simStopSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdvanceSimulationByOneStep.htm">simAdvanceSimulationByOneStep</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationState.htm">simGetSimulationState</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationTime.htm">simGetSimulationTime</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationTimeStep.htm">simGetSimulationTimeStep</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulationPassesPerRenderingPass.htm">simGetSimulationPassesPerRenderingPass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetSimulationPassesPerRenderingPass.htm">simSetSimulationPassesPerRenderingPass</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetRealTimeSimulation.htm">simGetRealTimeSimulation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustRealTimeTimer.htm">simAdjustRealTimeTimer</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsRealTimeSimulationStepNeeded.htm">simIsRealTimeSimulationStepNeeded</a>
+</code>
+<br>
+
+
+
+<h2><a name="threads"></a><a name="threadRelatedFunctionality"></a>Threads</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetThreadAutomaticSwitch.htm">sim.getThreadAutomaticSwitch</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetThreadExitRequest.htm">sim.getThreadExitRequest</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetThreadSwitchTiming.htm">sim.getThreadSwitchTiming</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetThreadSwitchAllowed.htm">sim.getThreadSwitchAllowed</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simHandleExtCalls.htm">sim.handleExtCalls</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetThreadAutomaticSwitch.htm">sim.setThreadAutomaticSwitch</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetThreadSwitchTiming.htm">sim.setThreadSwitchTiming</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetThreadSwitchAllowed.htm">sim.setThreadSwitchAllowed</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSwitchThread.htm">sim.switchThread</a>
+</code>
+<br>
+
+
+
+<h2><a name="customizingLuaFunctions"></a><a name="customScriptFunctions"></a>Custom scripts</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptFunction.htm">sim.registerScriptFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptVariable.htm">sim.registerScriptVariable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptFuncHook.htm">sim.registerScriptFuncHook</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptCallbackFunction.htm">simRegisterScriptCallbackFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptVariable.htm">simRegisterScriptVariable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRegisterScriptFuncHook.htm">simRegisterScriptFuncHook</a>
+</code>
+<br>
+
+
+
+<h2><a name="transformations"></a><a name="coordinatesAndTransformations"></a>Transformations</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simBuildMatrix.htm">sim.buildMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simBuildPose.htm">sim.buildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEulerAnglesFromMatrix.htm">sim.getEulerAnglesFromMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMatrixToPose.htm">sim.matrixToPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPoseToMatrix.htm">sim.poseToMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMultiplyMatrices.htm">sim.multiplyMatrices</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMultiplyPoses.htm">sim.multiplyPoses</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInterpolateMatrices.htm">sim.interpolateMatrices</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInterpolatePoses.htm">sim.interpolatePoses</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInvertMatrix.htm">sim.invertMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInvertPose.htm">sim.invertPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectMatrix.htm">sim.getObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectMatrix.htm">sim.setObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPose.htm">sim.getObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPose.htm">sim.setObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPosition.htm">sim.getObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPosition.htm">sim.setObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectOrientation.htm">sim.getObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectOrientation.htm">sim.setObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectQuaternion.htm">sim.getObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectQuaternion.htm">sim.setObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectChildPose.htm">sim.getObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectChildPose.htm">sim.setObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMultiplyVector.htm">sim.multiplyVector</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetRotationAxis.htm">sim.getRotationAxis</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRotateAroundAxis.htm">sim.rotateAroundAxis</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectVelocity.htm">sim.getObjectVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReorientShapeBoundingBox.htm">sim.reorientShapeBoundingBox</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAlphaBetaGammaToYawPitchRoll.htm">sim.alphaBetaGammaToYawPitchRoll</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simYawPitchRollToAlphaBetaGamma.htm">sim.yawPitchRollToAlphaBetaGamma</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#packing">packing/unpacking functions</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simBuildMatrix.htm">simBuildMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simBuildPose.htm">simBuildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEulerAnglesFromMatrix.htm">simGetEulerAnglesFromMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMatrixToPose.htm">simMatrixToPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPoseToMatrix.htm">simPoseToMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMultiplyMatrices.htm">simMultiplyMatrices</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMultiplyPoses.htm">simMultiplyPoses</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInterpolateMatrices.htm">simInterpolateMatrices</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInterpolatePoses.htm">simInterpolatePoses</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInvertMatrix.htm">simInvertMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInvertPose.htm">simInvertPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectMatrix.htm">simGetObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectMatrix.htm">simSetObjectMatrix</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPose.htm">simGetObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPose.htm">simSetObjectPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectPosition.htm">simGetObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectPosition.htm">simSetObjectPosition</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectOrientation.htm">simGetObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectOrientation.htm">simSetObjectOrientation</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectQuaternion.htm">simGetObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectQuaternion.htm">simSetObjectQuaternion</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectChildPose.htm">simGetObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectChildPose.htm">simSetObjectChildPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTransformVector.htm">simTransformVector</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetRotationAxis.htm">simGetRotationAxis</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRotateAroundAxis.htm">simRotateAroundAxis</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectVelocity.htm">simGetObjectVelocity</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReorientShapeBoundingBox.htm">simReorientShapeBoundingBox</a>
+</code>
+<br>
+
+
+
+<h2>Messaging</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddLog.htm">sim.addLog</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadModule.htm">sim.loadModule</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnloadModule.htm">sim.unloadModule</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulatorMessage.htm">sim.getSimulatorMessage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialCheck.htm">sim.serialCheck</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialClose.htm">sim.serialClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialOpen.htm">sim.serialOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialRead.htm">sim.serialRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialSend.htm">sim.serialSend</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetInt32Signal.htm">sim.setInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetInt32Signal.htm">sim.getInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearInt32Signal.htm">sim.clearInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetFloatSignal.htm">sim.setFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetFloatSignal.htm">sim.getFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearFloatSignal.htm">sim.clearFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetDoubleSignal.htm">sim.setDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDoubleSignal.htm">sim.getDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearDoubleSignal.htm">sim.clearDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetStringSignal.htm">sim.setStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStringSignal.htm">sim.getStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearStringSignal.htm">sim.clearStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSignalName.htm">sim.getSignalName</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWaitForSignal.htm">sim.waitForSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleClose.htm">sim.auxiliaryConsoleClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleOpen.htm">sim.auxiliaryConsoleOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsolePrint.htm">sim.auxiliaryConsolePrint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataRead.htm">sim.persistentDataRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataWrite.htm">sim.persistentDataWrite</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPersistentDataTags.htm">sim.getPersistentDataTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetMatchingPersistentDataTags.htm">sim.getMatchingPersistentDataTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCallScriptFunction.htm">sim.callScriptFunction</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExecuteScriptString.htm">sim.executeScriptString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectUid.htm">sim.getObjectUid</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetGenesisEvents.htm">sim.getGenesisEvents</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simBroadcastMsg.htm">sim.broadcastMsg</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushUserEvent.htm">sim.pushUserEvent</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddLog.htm">simAddLog</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLastError.htm">simSetLastError</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadModule.htm">simLoadModule</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnloadModule.htm">simUnloadModule</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSimulatorMessage.htm">simGetSimulatorMessage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialCheck.htm">simSerialCheck</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialClose.htm">simSerialClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialOpen.htm">simSerialOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialRead.htm">simSerialRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialSend.htm">simSerialSend</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetInt32Signal.htm">simSetInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetInt32Signal.htm">simGetInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearInt32Signal.htm">simClearInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetFloatSignal.htm">simSetFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetFloatSignal.htm">simGetFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearFloatSignal.htm">simClearFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetDoubleSignal.htm">simSetDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDoubleSignal.htm">simGetDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearDoubleSignal.htm">simClearDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetStringSignal.htm">simSetStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStringSignal.htm">simGetStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearStringSignal.htm">simClearStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSignalName.htm">simGetSignalName</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleClose.htm">simAuxiliaryConsoleClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleOpen.htm">simAuxiliaryConsoleOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsolePrint.htm">simAuxiliaryConsolePrint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataRead.htm">simPersistentDataRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataWrite.htm">simPersistentDataWrite</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPersistentDataTags.htm">simGetPersistentDataTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCallScriptFunctionEx.htm">simCallScriptFunctionEx</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExecuteScriptString.htm">simExecuteScriptString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectUid.htm">simGetObjectUid</a>
+</code>
+<br>
+
+
+
+<h2><a name="signals"></a>Signals</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetInt32Signal.htm">sim.setInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetInt32Signal.htm">sim.getInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearInt32Signal.htm">sim.clearInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetFloatSignal.htm">sim.setFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetFloatSignal.htm">sim.getFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearFloatSignal.htm">sim.clearFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetDoubleSignal.htm">sim.setDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDoubleSignal.htm">sim.getDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearDoubleSignal.htm">sim.clearDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetStringSignal.htm">sim.setStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStringSignal.htm">sim.getStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearStringSignal.htm">sim.clearStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSignalName.htm">sim.getSignalName</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWaitForSignal.htm">sim.waitForSignal</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#packing">data packing/unpacking</a>.
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#persistentData">persistent data</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetInt32Signal.htm">simSetInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetInt32Signal.htm">simGetInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearInt32Signal.htm">simClearInt32Signal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetFloatSignal.htm">simSetFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetFloatSignal.htm">simGetFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearFloatSignal.htm">simClearFloatSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetDoubleSignal.htm">simSetDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetDoubleSignal.htm">simGetDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearDoubleSignal.htm">simClearDoubleSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetStringSignal.htm">simSetStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStringSignal.htm">simGetStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simClearStringSignal.htm">simClearStringSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSignalName.htm">simGetSignalName</a>
+</code>
+<br>
+
+
+
+<h2><a name="persistentData"></a>Persistent Data</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataRead.htm">sim.persistentDataRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataWrite.htm">sim.persistentDataWrite</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPersistentDataTags.htm">sim.getPersistentDataTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetMatchingPersistentDataTags.htm">sim.getMatchingPersistentDataTags</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataRead.htm">simPersistentDataRead</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPersistentDataWrite.htm">simPersistentDataWrite</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPersistentDataTags.htm">simGetPersistentDataTags</a>
+</code>
+<br>
+
+
+
+<h2><a name="customDataBlocks"></a>Custom data blocks</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomTableData.htm">sim.readCustomTableData</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteCustomTableData.htm">sim.writeCustomTableData</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlock.htm">sim.readCustomDataBlock</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlockTags.htm">sim.readCustomDataBlockTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteCustomDataBlock.htm">sim.writeCustomDataBlock</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm#packing">data packing/unpacking</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlock.htm">simReadCustomDataBlock</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadCustomDataBlockTags.htm">simReadCustomDataBlockTags</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteCustomDataBlock.htm">simWriteCustomDataBlock</a>
+</code>
+<br>
+
+
+
+<h2><a name="textures"></a>Textures</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetTextureId.htm">sim.getTextureId</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeTextureId.htm">sim.getShapeTextureId</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadTexture.htm">sim.readTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveImage.htm">sim.saveImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadImage.htm">sim.loadImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScaledImage.htm">sim.getScaledImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTransformImage.htm">sim.transformImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteTexture.htm">sim.writeTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">sim.createTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeTexture.htm">sim.setShapeTexture</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simApplyTExture.htm">simApplyTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetTextureId.htm">simGetTextureId</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetShapeTextureId.htm">simGetShapeTextureId</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReadTexture.htm">simReadTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveImage.htm">simSaveImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadImage.htm">simLoadImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScaledImage.htm">simGetScaledImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTransformImage.htm">simTransformImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWriteTexture.htm">simWriteTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">simCreateTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetShapeTexture.htm">simSetShapeTexture</a>
+</code>
+<br>
+
+
+
+<h2><a name="blockingFunctions"></a>Blocking functions</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWait.htm">sim.wait</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simWaitForSignal.htm">sim.waitForSignal</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMoveToConfig.htm">sim.moveToConfig</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMoveToPose.htm">sim.moveToPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSerialRead.htm">sim.serialRead</a>
+</code>
+<br>
+
+
+
+<h2><a name="auxiliaryConsoles"></a><a name="auxiliaryConsoleFunctions"></a>Auxiliary consoles </h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleClose.htm">sim.auxiliaryConsoleClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleOpen.htm">sim.auxiliaryConsoleOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsolePrint.htm">sim.auxiliaryConsolePrint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleShow.htm">sim.auxiliaryConsoleShow</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/customUIPlugin.htm">Custom user interfaces</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleClose.htm">simAuxiliaryConsoleClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleOpen.htm">simAuxiliaryConsoleOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsolePrint.htm">simAuxiliaryConsolePrint</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAuxiliaryConsoleShow.htm">simAuxiliaryConsoleShow</a>
+</code>
+<br>
+
+
+
+<h2><a name="textEditors"></a>Text/code editors</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorClose.htm">sim.textEditorClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorGetInfo.htm">sim.textEditorGetInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorOpen.htm">sim.textEditorOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorShow.htm">sim.textEditorShow</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/customUIPlugin.htm">Custom user interfaces</a>.
+</code>
+<br>
+
+
+
+<h2><a name="importExport"></a><a name="importExportFunctions"></a>Import/export</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportShape.htm">sim.importShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportMesh.htm">sim.importMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExportMesh.htm">sim.exportMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">sim.createTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadImage.htm">sim.loadImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveImage.htm">sim.saveImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGenerateTextShape.htm">sim.generateTextShape</a>
+
+ See also:
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/simAssimp.htm?view=alphabetical">Assimp plugin API reference</a>.
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportShape.htm">simImportShape</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simImportMesh.htm">simImportMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simExportMesh.htm">simExportMesh</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateTexture.htm">simCreateTexture</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLoadImage.htm">simLoadImage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSaveImage.htm">simSaveImage</a>
+</code>
+<br>
+
+
+
+<h2><a name="PagesAndViewsFunctions"></a>Pages and views</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simFloatingViewAdd.htm">sim.floatingViewAdd</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simFloatingViewRemove.htm">sim.floatingViewRemove</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustView.htm">sim.adjustView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCameraFitToView.htm">sim.cameraFitToView</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simFloatingViewAdd.htm">simFloatingViewAdd</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simFloatingViewRemove.htm">simFloatingViewRemove</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAdjustView.htm">simAdjustView</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCameraFitToView.htm">simCameraFitToView</a>
+</code>
+<br>
+
+
+
+<h2><a name="rml"></a><a name="ruckig"></a>Ruckig motion library</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMoveToConfig.htm">sim.moveToConfig</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMoveToPose.htm">sim.moveToPose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigPos.htm">sim.ruckigPos</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigVel.htm">sim.ruckigVel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigStep.htm">sim.ruckigStep</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigRemove.htm">sim.ruckigRemove</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigPos.htm">simRuckigPos</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigVel.htm">simRuckigVel</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigStep.htm">simRuckigStep</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRuckigRemove.htm">simRuckigRemove</a>
+</code>
+<br>
+
+
+
+<h2><a name="packing"></a>Packing / unpacking</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackTable.htm">sim.packTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackTable.htm">sim.unpackTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackUInt8Table.htm">sim.packUInt8Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackUInt8Table.htm">sim.unpackUInt8Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackUInt16Table.htm">sim.packUInt16Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackUInt16Table.htm">sim.unpackUInt16Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackUInt32Table.htm">sim.packUInt32Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackUInt32Table.htm">sim.unpackUInt32Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackInt32Table.htm">sim.packInt32Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackInt32Table.htm">sim.unpackInt32Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackFloatTable.htm">sim.packFloatTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackFloatTable.htm">sim.unpackFloatTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackDoubleTable.htm">sim.packDoubleTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackDoubleTable.htm">sim.unpackDoubleTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCopyTable.htm">sim.copyTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTransformBuffer.htm">sim.transformBuffer</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackTable.htm">simPackTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackTable.htm">simUnpackTable</a>
+</code>
+<br>
+
+
+
+<h2><a name="stacks"></a>Stacks</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackTable.htm">sim.packTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackTable.htm">sim.unpackTable</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateStack.htm">simCreateStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReleaseStack.htm">simReleaseStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCopyStack.htm">simCopyStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushNullOntoStack.htm">simPushNullOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushBoolOntoStack.htm">simPushBoolOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushInt32OntoStack.htm">simPushInt32OntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushFloatOntoStack.htm">simPushFloatOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushDoubleOntoStack.htm">simPushDoubleOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushStringOntoStack.htm">simPushStringOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushUInt8TableOntoStack.htm">simPushUInt8TableOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushInt32TableOntoStack.htm">simPushInt32TableOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushFloatTableOntoStack.htm">simPushFloatTableOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushDoubleTableOntoStack.htm">simPushDoubleTableOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushTableOntoStack.htm">simPushTableOntoStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simInsertDataIntoStackTable.htm">simInsertDataIntoStackTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackSize.htm">simGetStackSize</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPopStackItem.htm">simPopStackItem</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simMoveStackItemToTop.htm">simMoveStackItemToTop</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsStackValueNull.htm">simIsStackValueNull</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackBoolValue.htm">simGetStackBoolValue</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackInt32Value.htm">simGetStackInt32Value</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackFloatValue.htm">simGetStackFloatValue</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackDoubleValue.htm">simGetStackDoubleValue</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackStringValue.htm">simGetStackStringValue</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackTableInfo.htm">simGetStackTableInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackUInt8Table.htm">simGetStackUInt8Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackInt32Table.htm">simGetStackInt32Table</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackFloatTable.htm">simGetStackFloatTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStackDoubleTable.htm">simGetStackDoubleTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnfoldStackTable.htm">simUnfoldStackTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simDebugStack.htm">simDebugStack</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPackTable.htm">simPackTable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simUnpackTable.htm">simUnpackTable</a>
+</code>
+<br>
+
+
+
+<h2><a name="objectParameters"></a>Object parameters</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectInt32Param.htm">sim.getObjectInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectInt32Param.htm">sim.setObjectInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectFloatParam.htm">sim.getObjectFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectFloatParam.htm">sim.setObjectFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectStringParam.htm">sim.getObjectStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectStringParam.htm">sim.setObjectStringParam</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectInt32Param.htm">simGetObjectInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectInt32Param.htm">simSetObjectInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectFloatParam.htm">simGetObjectFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectFloatParam.htm">simSetObjectFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetObjectStringParam.htm">simGetObjectStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetObjectStringParam.htm">simSetObjectStringParam</a>
+</code>
+<br>
+
+
+
+<h2><a name="scriptParameters"></a>Script parameters</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptInt32Param.htm">sim.getScriptInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetScriptInt32Param.htm">sim.setScriptInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptStringParam.htm">sim.getScriptStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetScriptStringParam.htm">sim.setScriptStringParam</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptInt32Param.htm">simGetScriptInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetScriptInt32Param.htm">simSetScriptInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetScriptStringParam.htm">simGetScriptStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetScriptStringParam.htm">simSetScriptStringParam</a>
+</code>
+<br>
+
+
+
+<h2><a name="params"></a>Simulator parameters</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetArrayParam.htm">sim.setArrayParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetArrayParam.htm">sim.getArrayParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetBoolParam.htm">sim.setBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetBoolParam.htm">sim.getBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetInt32Param.htm">sim.setInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetInt32Param.htm">sim.getInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetFloatParam.htm">sim.setFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetFloatParam.htm">sim.getFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetStringParam.htm">sim.setStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStringParam.htm">sim.getStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetNamedStringParam.htm">sim.setNamedStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedStringParam.htm">sim.getNamedStringParam</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetArrayParam.htm">simSetArrayParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetArrayParam.htm">simGetArrayParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetBoolParam.htm">simSetBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetBoolParam.htm">simGetBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetInt32Param.htm">simSetInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetInt32Param.htm">simGetInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetFloatParam.htm">simSetFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetFloatParam.htm">simGetFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetStringParam.htm">simSetStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetStringParam.htm">simGetStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetNamedStringParam.htm">simSetNamedStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedStringParam.htm">simGetNamedStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetUInt64Parameter.htm">simGetUInt64Parameter</a>
+</code>
+<br>
+
+
+
+<h2><a name="namedParams"></a>Simulator named parameters</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetNamedStringParam.htm">sim.setNamedStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedStringParam.htm">sim.getNamedStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedBoolParam.htm">sim.getNamedBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedFloatParam.htm">sim.getNamedFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedInt32Param.htm">sim.getNamedInt32Param</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetNamedStringParam.htm">simSetNamedStringParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNamedStringParam.htm">simGetNamedStringParam</a>
+</code>
+<br>
+
+
+
+<h2><a name="engineParameters"></a>Physics engine parameters</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEngineFloatParam.htm">sim.getEngineFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEngineInt32Param.htm">sim.getEngineInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEngineBoolParam.htm">sim.getEngineBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetEngineFloatParam.htm">sim.setEngineFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetEngineInt32Param.htm">sim.setEngineInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetEngineBoolParam.htm">sim.setEngineBoolParam</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEngineFloatParam.htm">simGetEngineFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEngineInt32Param.htm">simGetEngineInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetEngineBoolParam.htm">simGetEngineBoolParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetEngineFloatParam.htm">simSetEngineFloatParam</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetEngineInt32Param.htm">simSetEngineInt32Param</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetEngineBoolParam.htm">simSetEngineBoolParam</a>
+</code>
+<br>
+
+
+
+<h2>Other commands</h2>
+<code class="hljs language-lua coppelia-coppeliasim-script api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddLog.htm">sim.addLog</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAnnounceSceneContentChange.htm">sim.announceSceneContentChange</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNavigationMode.htm">sim.getNavigationMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetNavigationMode.htm">sim.setNavigationMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPage.htm">sim.getPage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetPage.htm">sim.setPage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetModuleName.htm">sim.getModuleName</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNavigationMode.htm">sim.getNavigationMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetSystemTime.htm">sim.getSystemTime</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRefreshDialogs.htm">sim.refreshDialogs</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetThreadSwitchTiming.htm">sim.setThreadSwitchTiming</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSwitchThread.htm">sim.switchThread</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExplicitHandling.htm">sim.getExplicitHandling</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetExplicitHandling.htm">sim.setExplicitHandling</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simLaunchExecutable.htm">sim.launchExecutable</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simQuitSimulator.htm">sim.quitSimulator</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">sim.getExtensionString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorClose.htm">sim.textEditorClose</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorGetInfo.htm">sim.textEditorGetInfo</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorOpen.htm">sim.textEditorOpen</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simTextEditorShow.htm">sim.textEditorShow</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetUserVariables.htm">sim.getUserVariables</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDeprecated.htm">sim.isDeprecated</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simModuleEntry.htm">sim.moduleEntry</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetGenesisEvents.htm">sim.getGenesisEvents</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simPushUserEvent.htm">sim.pushUserEvent</a>
+</code>
+<br>
+<code class="hljs language-c++ coppelia-coppeliasim-plugin api-list">
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAddLog.htm">simAddLog</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simAnnounceSceneContentChange.htm">simAnnounceSceneContentChange</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNavigationMode.htm">simGetNavigationMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetNavigationMode.htm">simSetNavigationMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetPage.htm">simGetPage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetPage.htm">simSetPage</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetLastError.htm">simGetLastError</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetLastError.htm">simSetLastError</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetModuleName.htm">simGetModuleName</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetNavigationMode.htm">simGetNavigationMode</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simRefreshDialogs.htm">simRefreshDialogs</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExplicitHandling.htm">simGetExplicitHandling</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simSetExplicitHandling.htm">simSetExplicitHandling</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simQuitSimulator.htm">simQuitSimulator</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simGetExtensionString.htm">simGetExtensionString</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simOpenTextEditor.htm">simOpenTextEditor</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simCreateBuffer.htm">simCreateBuffer</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simReleaseBuffer.htm">simReleaseBuffer</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simIsDeprecated.htm">simIsDeprecated</a>
+ <a href="https://www.coppeliarobotics.com/helpFiles/en/regularApi/simModuleEntry.htm">simModuleEntry</a>
+</code>
+<br>
+
+
+<br>
+<br>
+ </td></tr>
+ <tr>
+   <td> 
+ </td></tr>
+</tbody></table> 
+</div>  
+  
+  
+
+
+
+<div id="sonic-chromane-btn-widget" class=""><div class="sonic-chromane-btn-widget-img"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                    <path d="M0 14.7704C0 15.2331 0.183893 15.6765 0.510154 16.0042L7.33791 22.832C7.66566 23.1597 8.10908 23.3421 8.57177 23.3421H16.7446C20.0206 23.3421 22.6752 20.6876 22.6752 17.4116V6.59753C22.6752 3.32157 20.0206 0.666992 16.7446 0.666992H5.93054C2.65458 0.666992 0 3.32157 0 6.59753V14.7704H0Z" fill="url(#paint0_linear_11785_218544)"></path>
+                    <path d="M16.2212 22.4702C19.3044 22.4702 21.8032 19.9713 21.8032 16.8882V7.1211C21.8032 4.03793 19.3044 1.53906 16.2212 1.53906H6.45264C3.36947 1.53906 0.870605 4.03793 0.870605 7.1211V14.3448C0.870605 15.116 1.49495 15.7403 2.26611 15.7403H3.76395C5.88316 15.7403 7.60049 17.4576 7.60049 19.5783V21.0762C7.60049 21.8473 8.22483 22.4717 8.99599 22.4717H16.2197L16.2212 22.4702Z" fill="url(#paint1_linear_11785_218544)"></path>
+                    <path d="M8.3864 15.4744C7.37796 15.4744 6.5801 15.1466 5.99135 14.4912C5.4026 13.8357 5.17421 12.9844 5.30768 11.9404C5.44115 10.9082 5.89051 10.0792 6.65574 9.45339C7.4091 8.83349 8.27666 8.52355 9.26138 8.52355C10.47 8.52355 11.3865 8.98773 12.0124 9.91757L10.8912 10.883C10.4596 10.269 9.88869 9.96354 9.17833 9.96354C8.60144 9.96354 8.09722 10.1489 7.66566 10.5197C7.23411 10.8904 6.97607 11.3724 6.89153 11.9686C6.81294 12.5573 6.93454 13.0467 7.25635 13.4353C7.5841 13.8119 8.03345 14.0003 8.60441 14.0003C9.32663 14.0003 9.99843 13.6844 10.6168 13.0526L11.5274 14.0641C11.1389 14.4956 10.6702 14.8382 10.12 15.0933C9.56984 15.3483 8.99147 15.4759 8.38492 15.4759L8.3864 15.4744ZM14.2517 15.4922C13.7119 15.4922 13.2299 15.375 12.8072 15.1422C12.3846 14.9079 12.0583 14.5668 11.8285 14.1174L12.9303 13.1698C13.0757 13.4427 13.2774 13.6622 13.5354 13.8253C13.7934 13.9899 14.0678 14.0715 14.36 14.0715C14.6032 14.0715 14.8078 14.0136 14.9754 13.898C15.143 13.7823 15.2409 13.634 15.272 13.4516C15.2957 13.2143 15.1474 13.0022 14.8256 12.8139L14.2339 12.5128C13.9358 12.3616 13.7 12.2281 13.5235 12.1124C12.8799 11.6868 12.613 11.1099 12.7227 10.3818C12.8013 9.81673 13.0742 9.36441 13.5428 9.0248C14.01 8.68519 14.5869 8.51465 15.2735 8.51465C16.1173 8.51465 16.8277 8.8157 17.4046 9.41632L16.4569 10.4915C16.0313 10.1089 15.5923 9.91757 15.1356 9.91757C14.8983 9.91757 14.7055 9.96948 14.5572 10.0718C14.4089 10.1756 14.3244 10.3091 14.3066 10.4722C14.2828 10.6116 14.314 10.7288 14.403 10.8222C14.4905 10.9156 14.6566 11.0269 14.8998 11.1544C15.6042 11.5192 16.0387 11.755 16.2018 11.8648C16.8158 12.2963 17.0635 12.8569 16.9493 13.5495C16.8588 14.156 16.5578 14.6335 16.0476 14.9791C15.5434 15.3187 14.9457 15.4892 14.2532 15.4892L14.2517 15.4922Z" fill="#F4F4F6"></path>
+                    <defs>
+                    <lineargradient id="paint0_linear_11785_218544" x1="20.5989" y1="21.9199" x2="1.7366" y2="2.40359" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"></stop>
+                    <stop offset="0.270588" stop-color="#C940FF"></stop>
+                    <stop offset="0.478431" stop-color="#931FFF"></stop>
+                    <stop offset="0.709804" stop-color="#1B6BFF"></stop>
+                    <stop offset="1" stop-color="#EF96FF"></stop>
+                    </lineargradient>
+                    <lineargradient id="paint1_linear_11785_218544" x1="5.31814" y1="18.2629" x2="22.5388" y2="0.508371" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#5105CD"></stop>
+                    <stop offset="1" stop-color="#5105CD" stop-opacity="0"></stop>
+                    </lineargradient>
+                    </defs>
+                </svg></div><div class="sonic-chromane-btn-widget-text">Ctrl+M</div><div class="sonic-chromane-btn-widget-close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <g>
+                <path d="M18 6L6 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18 18L6 6" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                <clippath>
+                <rect width="24" height="24" fill="none"></rect>
+                </clippath>
+                </defs>
+            </svg></div></div></body></html>
