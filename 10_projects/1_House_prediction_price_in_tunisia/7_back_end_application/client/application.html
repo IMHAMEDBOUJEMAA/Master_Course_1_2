@@ -6,9 +6,23 @@
     <title>Real Estate Price Estimator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="application.js"></script>
+    <script src="slide.js"></script>
 	<link rel="stylesheet" href="application.css">
   </head>
   <body>
+
+    <div id="background">
+      <div class="background-image">
+         <img class="slideshow " src="../1.jpg" alt="1">
+         <img class="slideshow active" src="../3.jpg" alt="3">
+      </div>
+   </div>
+   <div class="logo-container">
+      <img class="logo" src="../logo.jpeg" alt="logo">
+      <h1 class="logo-text">Higher Institute of Technological Studies of Bizerte</h1>
+   </div>
+
+
     <div id="container">
         <h1>Real Home Price Estimator In Tunisia</h1>
         <div id="form-container">
@@ -58,6 +72,7 @@
                 <option value="10">10</option>
               </select>
             </div>
+          
         <div class="checkboxes">
             <div class="checkbox-wrapper">
                 <input type="checkbox" name="garage" id="uigarage" value="1">
@@ -93,11 +108,13 @@
                 <input type="checkbox" name="air_conditioning" id="uiair_conditioning" value="1">
                 <label class="checkbox-label" for="uiair_conditioning">Air conditioning</label>
               </div>
+            
             </div>    
               
             
-
+          
       <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
       <div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
+    
     </body>
     </html>
