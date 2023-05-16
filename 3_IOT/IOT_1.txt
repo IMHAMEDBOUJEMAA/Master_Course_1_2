@@ -1,0 +1,15 @@
+import requests # ThingSpeak channel details
+api_key = &quot;YOUR_API_KEY&quot;
+base_url = f&quot;https://api.thingspeak.com/update?api_key={api_key}&quot;
+# Data to send
+field1_value = 25.5
+field2_value = 18.3
+# Create the request URL
+url = f&quot;{base_url}&amp;field1={field1_value}&amp;field2={field2_value}&quot;
+# Send the HTTP GET request
+response = requests.get(url)
+# Check the response status code
+if response.status_code == 200:
+print(&quot;Data sent to ThingSpeak successfully.&quot;)
+else:
+print(&quot;Failed to send data to ThingSpeak.&quot;)
