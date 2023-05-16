@@ -21,7 +21,7 @@ def get_estimated_price(governorate,area,room,bathroom,garage,garden,pool,furnis
     x[6] = furnished
     x[7] = equipped_kitchen
     x[8] = central_heating
-    x[9] = air_conditioning
+    x[10] = air_conditioning
     if loc_index >= 0:
         x[loc_index] = 1
 
